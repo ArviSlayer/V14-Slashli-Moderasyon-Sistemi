@@ -1,0 +1,21 @@
+{
+  "name": "arvis-moderasyon-v14",
+  "version": "1.0.0",
+  "description": "ArviS - Moderasyon V14",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "ArviS#0011",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/voice": "^0.11.0",
+    "color-convert": "^2.0.1",
+    "discord.js": "^14.1.2",
+    "mongoose": "^6.5.1"
+  },
+  "engines": {
+    "node": "16.x"
+  }
+}
