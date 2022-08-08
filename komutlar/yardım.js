@@ -14,7 +14,7 @@ module.exports = {
     run: async (client, interaction) => {
         interaction.reply({embeds:[
             {
-                title: "Runied Marvel | Yardım Menüsü",
+                title: "Yardım Menüsü",
                 color: 0xFF6600,
                 fields:[
                     {name: "/ayarlar", value: "Sunucu Ayarları", inline: true},
