@@ -17,40 +17,6 @@ db.connect(mongoDB)
 global.client = client;
 client.commands = (global.commands = []);
 
-//KOMUTLAR LOAD
-fs.readdir("./komutlar/", (err, files) => {
-    if (err) throw err;
-
-    files.forEach((file) => {
-        if (!file.endsWith(".js")) return;
-        let props = require(`./komutlar/${file}`);
-    
-        client.commands.push({
-             name: props.name.toLowerCase(),
-             description: props.description,
-             options: props.options,
-             type: props.type,
-        })
-        console.log(`Slash Komutu Yüklendi: ${props.name}`);
-    });
-});
-//KOMUTLAR LOAD SON
-
-//EVENTS LOAD
-fs.readdir("./events/", (_err, files) => {
-    files.forEach((file) => {
-        if (!file.endsWith(".js")) return;
-        const event = require(`./events/${file}`);
-        let eventName = file.split(".")[0];
-        
-        console.log(`Event Yüklendi: ${eventName}`);
-        client.on(eventName, (...args) => {
-           event(client, ...args);
-        });
-    });
-});
-//EVENTS LOAD SON
-
 //CLIENT READY
 client.on("ready",async () => {
 client.user.setActivity("ArviS#0011", {type:"WATCHING"});
